@@ -12,7 +12,7 @@ public class PsqlStorage {
 
 
     private static final PsqlStorage psqlStorage = new PsqlStorage();
-    private final String url = "jdbc:postgresql://pg:5432/studs";
+    private final String url = "jdbc:postgresql://localhost:5431/studs";
     private final String user = "s368149";
     private String password = "A4diwszNUMbJj7s9";
 
@@ -26,7 +26,7 @@ public class PsqlStorage {
             connection = DriverManager.getConnection(url, user, password);
             log.info("Connected to the PostgreSQL server successfully.");
         } catch (SQLException | ClassNotFoundException e) {
-            log.error(e.toString());
+            log.error(e.getMessage());
             System.exit(-1);
         }
     }

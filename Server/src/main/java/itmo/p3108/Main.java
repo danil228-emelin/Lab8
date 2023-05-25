@@ -14,7 +14,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class Main {
     public static void main(String[] args) {
-        ORMAnalyzer.analyze("itmo.p3108.model");
+       // ORMAnalyzer.analyze("itmo.p3108.model");
         PrepareServer prepareServer = new PrepareServer();
         prepareServer.prepare();
         UDPSender udpSender = new UDPSender();

@@ -1,0 +1,4 @@
+2023-05-25 13:03:25,981 DEBUG o.r.Reflections [main] going to scan these urls: [file:/D:/IntelliJ%20IDEA%202022.2.3/Lab7/Client/target/classes/, file:/D:/IntelliJ%20IDEA%202022.2.3/Lab7/Common/target/classes/] 
+2023-05-25 13:03:26,230 INFO o.r.Reflections [main] Reflections took 207 ms to scan 2 urls, producing 5 keys and 24 values  
+2023-05-25 13:33:03,926 DEBUG o.r.Reflections [main] going to scan these urls: [file:/D:/IntelliJ%20IDEA%202022.2.3/Lab7/Client/target/classes/, file:/D:/IntelliJ%20IDEA%202022.2.3/Lab7/Common/target/classes/] 
+2023-05-25 13:33:04,045 INFO o.r.Reflections [main] Reflections took 112 ms to scan 2 urls, producing 5 keys and 24 values  

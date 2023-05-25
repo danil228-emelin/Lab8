@@ -1,5 +1,6 @@
 package itmo.p3108.command;
 
+import itmo.p3108.bd.PsqlStorage;
 import itmo.p3108.command.type.Command;
 import itmo.p3108.command.type.NoArgument;
 import itmo.p3108.dao.DAO;

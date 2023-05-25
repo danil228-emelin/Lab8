@@ -3,15 +3,12 @@ package itmo.p3108.command;
 import itmo.p3108.command.type.Command;
 import itmo.p3108.command.type.OneArgument;
 import itmo.p3108.util.Token;
-import itmo.p3108.util.UserReader;
 import itmo.p3108.util.Users;
 import itmo.p3108.util.UsersStorage;
 import lombok.NonNull;
 import lombok.extern.slf4j.Slf4j;
 
-import java.io.Console;
 import java.io.Serial;
-import java.util.Arrays;
 import java.util.Optional;
 
 @Slf4j
@@ -68,13 +65,9 @@ public class LogIn implements OneArgument<Users> {
 
     @Override
     public Optional<Command> prepare(String argument) {
-        System.out.println("Enter login");
-        String log = UserReader.read();
-        Console console = System.console();
-        users.setLogin(log);
-        System.out.println("Enter password");
-        String password = Arrays.toString(console.readPassword());
-        users.setPassword(password);
+        String[] strings = argument.split("~");
+        users.setLogin(strings[0]);
+        users.setPassword(strings[1]);
         return Optional.of(this);
     }
 }

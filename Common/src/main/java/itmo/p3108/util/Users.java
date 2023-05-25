@@ -13,11 +13,12 @@ public class Users implements Serializable {
     private static final long serialVersionUID = 493737051L;
 
     private static final Users USER = new Users();
-    private String login;
-    private String password;
+  volatile   private String login;
+  volatile   private String password;
     private String token;
     private Boolean isSaved = false;
     private Integer UserId;
+
     public Users() {
     }
 

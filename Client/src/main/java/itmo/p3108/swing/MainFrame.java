@@ -4,6 +4,7 @@ import itmo.p3108.adapter.LocalDateAdapter;
 import itmo.p3108.command.Exit;
 import itmo.p3108.model.Person;
 import itmo.p3108.util.ServerChanel;
+import itmo.p3108.util.Users;
 import lombok.extern.slf4j.Slf4j;
 
 import javax.swing.*;
@@ -29,9 +30,6 @@ public class MainFrame extends AbstractFrame {
     }
 
 
-    public static void main(String[] args) {
-        new MainFrame().createMainFrame(null, "d");
-    }
 
     public static void clear() {
         if (MainFrame.model.getRowCount() > 0) {
@@ -48,14 +46,14 @@ public class MainFrame extends AbstractFrame {
         }
     }
 
-    public void createMainFrame(List<Person> list, String userName) {
+    public void createMainFrame() {
 
         log.info("try to create MainFrame");
         JTable upperTable = new JTable();
         JScrollPane paneUpperTable = new JScrollPane(upperTable);
         upperTable.setFillsViewportHeight(true);
 
-        JLabel user = new JLabel(userName);
+        JLabel user = new JLabel(Users.getUser().getLogin());
         user.setForeground(Color.CYAN);
         user.setBounds(40, 1, 70, 31);
         upperTable.add(user);
@@ -67,7 +65,7 @@ public class MainFrame extends AbstractFrame {
         jPanel.add(picture);
 
 
-        itmo.p3108.swing.Button buttonCreator1 = new itmo.p3108.swing.Button("Exit", "Выход");
+        ButtonImpl buttonCreator1 = new ButtonImpl("Exit", "Выход");
         buttonCreator1.makeInvisible();
         JButton exit = buttonCreator1.getButton();
         exit.setForeground(Color.CYAN);
@@ -116,7 +114,13 @@ public class MainFrame extends AbstractFrame {
             button = buttonCreator6;
         });
         addIfMax.setBounds(992, 130, 125, 30);
-        Button next = new NextButton();
+        Button next = new ButtonImpl("NEXT->", "Далее");
+        JButton nextButton = next.getButton();
+        nextButton.addActionListener(l -> {
+            jFrame.setVisible(false);
+            MapFrame mapFrame = new MapFrame();
+            mapFrame.createMapFrame(ServerChanel.list,jFrame);
+        });
         next.makeInvisible();
         JButton button1 = next.getButton();
         button1.setForeground(Color.RED);
@@ -144,7 +148,7 @@ public class MainFrame extends AbstractFrame {
         model.addColumn("locationZ");
         model.addColumn("locationName");
         table.setForeground(Color.RED);
-        for (Person p : list) {
+        for (Person p : ServerChanel.list) {
             model.addRow(new Object[]{p.getPersonId(), p.getPersonName(), p.getPersonHeight(), LocalDateAdapter.getInstance().marshal(p.getPersonBirthday()), p.getPersonEyeColor().getName().substring(2), p.getPersonNationality().getName().substring(2), p.getCoordinates().getCoordinatesX(), p.getCoordinates().getCoordinatesY(), p.getLocation().getLocationX(), p.getLocation().getLocationY(), p.getLocation().getLocationZ(), p.getLocation().getLocationName()});
         }
         buttonCreators.add(buttonCreator1);

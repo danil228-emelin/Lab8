@@ -496,3 +496,234 @@
 2023-06-07 14:09:33,379 INFO i.p.u.ServerChanel [MainFrameThread] Reply got from server 
 2023-06-07 14:09:33,384 INFO i.p.u.DeserializeObject [MainFrameThread] message deserialized 
 2023-06-07 14:09:33,384 INFO i.p.p.InfoButton [MainFrameThread] buttonAction try to perform 
+2023-06-07 14:15:54,806 DEBUG o.r.Reflections [main] going to scan these urls: [file:/D:/IntelliJ%20IDEA%202022.2.3/Lab7/Server/target/classes/, file:/D:/IntelliJ%20IDEA%202022.2.3/Lab7/Client/target/classes/, file:/D:/IntelliJ%20IDEA%202022.2.3/Lab7/Common/target/classes/] 
+2023-06-07 14:15:54,889 INFO o.r.Reflections [main] Reflections took 80 ms to scan 3 urls, producing 5 keys and 25 values  
+2023-06-07 14:15:54,924 INFO i.p.u.ShutDownThread [main] +1 thread executed after main 
+2023-06-07 14:15:59,641 INFO i.p.u.Executor [main] AuthorizationFrame:Button clicked 
+2023-06-07 14:15:59,650 INFO i.p.u.SerializeObject [main] serialize command log_in 
+2023-06-07 14:15:59,652 INFO i.p.u.ServerChanel [main] Message sent to server,waiting for reply 
+2023-06-07 14:15:59,767 INFO i.p.u.ServerChanel [main] Reply got from server 
+2023-06-07 14:15:59,795 INFO i.p.u.DeserializeObject [main] message deserialized 
+2023-06-07 14:15:59,795 INFO i.p.u.Executor [main] Authorized successfully 
+2023-06-07 14:15:59,811 INFO i.p.u.Executor [main] createMainFrameThread started 
+2023-06-07 14:15:59,842 INFO i.p.s.MainFrame [main] try to create MainFrame 
+2023-06-07 14:15:59,873 INFO i.p.s.AddButton [main] FlyWeightCommandFactory found add command 
+2023-06-07 14:15:59,886 INFO i.p.s.UpdateButton [main] FlyWeightCommandFactory found add command 
+2023-06-07 14:15:59,952 INFO i.p.s.MainFrame [main] create MainFrame successfully 
+2023-06-07 14:16:03,614 INFO i.p.u.Executor [MainFrameThread] Main frame:Button clicked:info 
+2023-06-07 14:16:03,615 INFO i.p.u.Executor [MainFrameThread] Main frame:Try to serialize command 
+2023-06-07 14:16:03,616 INFO i.p.u.SerializeObject [MainFrameThread] serialize command info 
+2023-06-07 14:16:03,617 INFO i.p.u.ServerChanel [MainFrameThread] Message sent to server,waiting for reply 
+2023-06-07 14:16:03,725 INFO i.p.u.ServerChanel [MainFrameThread] Reply got from server 
+2023-06-07 14:16:03,729 INFO i.p.u.DeserializeObject [MainFrameThread] message deserialized 
+2023-06-07 14:16:03,729 INFO i.p.s.InfoButton [MainFrameThread] buttonAction try to perform 
+2023-06-07 14:16:05,760 INFO i.p.s.AddFrame [AWT-EventQueue-0] buttonAction try to perform 
+2023-06-07 14:16:05,831 INFO i.p.u.Executor [MainFrameThread] Main frame:Button clicked:add 
+2023-06-07 16:07:27,824 DEBUG o.r.Reflections [main] going to scan these urls: [file:/D:/IntelliJ%20IDEA%202022.2.3/Lab7/Server/target/classes/, file:/D:/IntelliJ%20IDEA%202022.2.3/Lab7/Client/target/classes/, file:/D:/IntelliJ%20IDEA%202022.2.3/Lab7/Common/target/classes/] 
+2023-06-07 16:07:28,061 INFO o.r.Reflections [main] Reflections took 232 ms to scan 3 urls, producing 5 keys and 25 values  
+2023-06-07 16:07:28,099 INFO i.p.u.ShutDownThread [main] +1 thread executed after main 
+2023-06-07 16:07:38,450 INFO i.p.u.Executor [main] AuthorizationFrame:Button clicked 
+2023-06-07 16:07:38,460 INFO i.p.u.SerializeObject [main] serialize command log_in 
+2023-06-07 16:07:38,462 INFO i.p.u.ServerChanel [main] Message sent to server,waiting for reply 
+2023-06-07 16:07:38,568 INFO i.p.u.ServerChanel [main] Reply got from server 
+2023-06-07 16:07:38,592 INFO i.p.u.DeserializeObject [main] message deserialized 
+2023-06-07 16:07:38,593 INFO i.p.u.Executor [main] Authorized successfully 
+2023-06-07 16:07:38,612 INFO i.p.u.Executor [main] createMainFrameThread started 
+2023-06-07 16:07:38,640 INFO i.p.s.MainFrame [main] try to create MainFrame 
+2023-06-07 16:07:38,676 INFO i.p.s.AddButton [main] FlyWeightCommandFactory found add command 
+2023-06-07 16:07:38,694 INFO i.p.s.UpdateButton [main] FlyWeightCommandFactory found add command 
+2023-06-07 16:07:38,773 INFO i.p.s.MainFrame [main] create MainFrame successfully 
+2023-06-07 16:08:49,482 DEBUG o.r.Reflections [main] going to scan these urls: [file:/D:/IntelliJ%20IDEA%202022.2.3/Lab7/Server/target/classes/, file:/D:/IntelliJ%20IDEA%202022.2.3/Lab7/Client/target/classes/, file:/D:/IntelliJ%20IDEA%202022.2.3/Lab7/Common/target/classes/] 
+2023-06-07 16:08:49,578 INFO o.r.Reflections [main] Reflections took 91 ms to scan 3 urls, producing 5 keys and 25 values  
+2023-06-07 16:08:49,631 INFO i.p.u.ShutDownThread [main] +1 thread executed after main 
+2023-06-07 16:08:54,536 INFO i.p.u.Executor [main] AuthorizationFrame:Button clicked 
+2023-06-07 16:08:54,558 INFO i.p.u.SerializeObject [main] serialize command log_in 
+2023-06-07 16:08:54,561 INFO i.p.u.ServerChanel [main] Message sent to server,waiting for reply 
+2023-06-07 16:08:54,674 INFO i.p.u.ServerChanel [main] Reply got from server 
+2023-06-07 16:08:54,697 INFO i.p.u.DeserializeObject [main] message deserialized 
+2023-06-07 16:08:54,698 INFO i.p.u.Executor [main] Authorized successfully 
+2023-06-07 16:08:54,716 INFO i.p.u.Executor [main] createMainFrameThread started 
+2023-06-07 16:08:54,731 INFO i.p.s.MainFrame [main] try to create MainFrame 
+2023-06-07 16:08:54,772 INFO i.p.s.AddButton [main] FlyWeightCommandFactory found add command 
+2023-06-07 16:08:54,776 INFO i.p.s.UpdateButton [main] FlyWeightCommandFactory found add command 
+2023-06-07 16:08:54,851 INFO i.p.s.MainFrame [main] create MainFrame successfully 
+2023-06-07 16:08:58,857 INFO i.p.u.Executor [MainFrameThread] Main frame:Button clicked:info 
+2023-06-07 16:08:58,858 INFO i.p.u.Executor [MainFrameThread] Main frame:Try to serialize command 
+2023-06-07 16:08:58,860 INFO i.p.u.SerializeObject [MainFrameThread] serialize command info 
+2023-06-07 16:08:58,860 INFO i.p.u.ServerChanel [MainFrameThread] Message sent to server,waiting for reply 
+2023-06-07 16:08:58,965 INFO i.p.u.ServerChanel [MainFrameThread] Reply got from server 
+2023-06-07 16:08:58,970 INFO i.p.u.DeserializeObject [MainFrameThread] message deserialized 
+2023-06-07 16:08:58,970 INFO i.p.s.InfoButton [MainFrameThread] buttonAction try to perform 
+2023-06-07 16:09:47,374 DEBUG o.r.Reflections [main] going to scan these urls: [file:/D:/IntelliJ%20IDEA%202022.2.3/Lab7/Server/target/classes/, file:/D:/IntelliJ%20IDEA%202022.2.3/Lab7/Client/target/classes/, file:/D:/IntelliJ%20IDEA%202022.2.3/Lab7/Common/target/classes/] 
+2023-06-07 16:09:47,479 INFO o.r.Reflections [main] Reflections took 100 ms to scan 3 urls, producing 5 keys and 25 values  
+2023-06-07 16:09:47,524 INFO i.p.u.ShutDownThread [main] +1 thread executed after main 
+2023-06-07 16:09:51,928 INFO i.p.u.Executor [main] AuthorizationFrame:Button clicked 
+2023-06-07 16:09:51,941 INFO i.p.u.SerializeObject [main] serialize command log_in 
+2023-06-07 16:09:51,944 INFO i.p.u.ServerChanel [main] Message sent to server,waiting for reply 
+2023-06-07 16:09:52,047 INFO i.p.u.ServerChanel [main] Reply got from server 
+2023-06-07 16:09:52,081 INFO i.p.u.DeserializeObject [main] message deserialized 
+2023-06-07 16:09:52,081 INFO i.p.u.Executor [main] Authorized successfully 
+2023-06-07 16:09:52,113 INFO i.p.u.Executor [main] createMainFrameThread started 
+2023-06-07 16:09:52,129 INFO i.p.s.MainFrame [main] try to create MainFrame 
+2023-06-07 16:09:52,180 INFO i.p.s.AddButton [main] FlyWeightCommandFactory found add command 
+2023-06-07 16:09:52,186 INFO i.p.s.UpdateButton [main] FlyWeightCommandFactory found add command 
+2023-06-07 16:09:52,258 INFO i.p.s.MainFrame [main] create MainFrame successfully 
+2023-06-07 16:09:53,830 INFO i.p.u.Executor [MainFrameThread] Main frame:Button clicked:clear 
+2023-06-07 16:09:53,831 INFO i.p.u.Executor [MainFrameThread] Main frame:Try to serialize command 
+2023-06-07 16:09:53,832 INFO i.p.u.SerializeObject [MainFrameThread] serialize command clear 
+2023-06-07 16:09:53,833 INFO i.p.u.ServerChanel [MainFrameThread] Message sent to server,waiting for reply 
+2023-06-07 16:09:53,944 INFO i.p.u.ServerChanel [MainFrameThread] Reply got from server 
+2023-06-07 16:09:53,945 INFO i.p.u.DeserializeObject [MainFrameThread] message deserialized 
+2023-06-07 16:09:54,841 INFO i.p.s.AddFrame [AWT-EventQueue-0] buttonAction try to perform 
+2023-06-07 16:09:54,942 INFO i.p.u.Executor [MainFrameThread] Main frame:Button clicked:add 
+2023-06-07 16:10:19,767 INFO i.p.s.AddFrame [AWT-EventQueue-0] Try to create person 
+2023-06-07 16:10:19,770 DEBUG o.r.Reflections [AWT-EventQueue-0] going to scan these urls: [file:/D:/IntelliJ%20IDEA%202022.2.3/Lab7/Server/target/classes/, file:/D:/IntelliJ%20IDEA%202022.2.3/Lab7/Client/target/classes/, file:/D:/IntelliJ%20IDEA%202022.2.3/Lab7/Common/target/classes/] 
+2023-06-07 16:10:19,822 INFO o.r.Reflections [AWT-EventQueue-0] Reflections took 52 ms to scan 3 urls, producing 1 keys and 13 values  
+2023-06-07 16:10:19,837 INFO i.p.u.Executor [MainFrameThread] Main frame:Try to serialize command 
+2023-06-07 16:10:19,843 INFO i.p.u.SerializeObject [MainFrameThread] serialize command add 
+2023-06-07 16:10:19,844 INFO i.p.u.ServerChanel [MainFrameThread] Message sent to server,waiting for reply 
+2023-06-07 16:10:19,945 INFO i.p.u.ServerChanel [MainFrameThread] Reply got from server 
+2023-06-07 16:10:19,947 INFO i.p.u.DeserializeObject [MainFrameThread] message deserialized 
+2023-06-07 16:10:21,078 INFO i.p.s.AddFrame [AWT-EventQueue-0] buttonAction try to perform 
+2023-06-07 16:10:21,094 INFO i.p.u.Executor [MainFrameThread] Main frame:Button clicked:add 
+2023-06-07 16:10:38,959 INFO i.p.s.AddFrame [AWT-EventQueue-0] Try to create person 
+2023-06-07 16:10:38,960 DEBUG o.r.Reflections [AWT-EventQueue-0] going to scan these urls: [file:/D:/IntelliJ%20IDEA%202022.2.3/Lab7/Server/target/classes/, file:/D:/IntelliJ%20IDEA%202022.2.3/Lab7/Client/target/classes/, file:/D:/IntelliJ%20IDEA%202022.2.3/Lab7/Common/target/classes/] 
+2023-06-07 16:10:38,982 INFO o.r.Reflections [AWT-EventQueue-0] Reflections took 21 ms to scan 3 urls, producing 1 keys and 13 values  
+2023-06-07 16:10:38,983 INFO i.p.u.Executor [MainFrameThread] Main frame:Try to serialize command 
+2023-06-07 16:10:38,985 INFO i.p.u.SerializeObject [MainFrameThread] serialize command add 
+2023-06-07 16:10:38,985 INFO i.p.u.ServerChanel [MainFrameThread] Message sent to server,waiting for reply 
+2023-06-07 16:10:39,093 INFO i.p.u.ServerChanel [MainFrameThread] Reply got from server 
+2023-06-07 16:10:39,095 INFO i.p.u.DeserializeObject [MainFrameThread] message deserialized 
+2023-06-07 16:10:40,666 INFO i.p.s.AddFrame [AWT-EventQueue-0] buttonAction try to perform 
+2023-06-07 16:10:40,691 INFO i.p.u.Executor [MainFrameThread] Main frame:Button clicked:add 
+2023-06-07 16:11:02,080 INFO i.p.s.AddFrame [AWT-EventQueue-0] Try to create person 
+2023-06-07 16:11:02,081 DEBUG o.r.Reflections [AWT-EventQueue-0] going to scan these urls: [file:/D:/IntelliJ%20IDEA%202022.2.3/Lab7/Server/target/classes/, file:/D:/IntelliJ%20IDEA%202022.2.3/Lab7/Client/target/classes/, file:/D:/IntelliJ%20IDEA%202022.2.3/Lab7/Common/target/classes/] 
+2023-06-07 16:11:02,105 INFO o.r.Reflections [AWT-EventQueue-0] Reflections took 23 ms to scan 3 urls, producing 1 keys and 13 values  
+2023-06-07 16:11:02,106 INFO i.p.u.Executor [MainFrameThread] Main frame:Try to serialize command 
+2023-06-07 16:11:02,107 INFO i.p.u.SerializeObject [MainFrameThread] serialize command add 
+2023-06-07 16:11:02,108 INFO i.p.u.ServerChanel [MainFrameThread] Message sent to server,waiting for reply 
+2023-06-07 16:11:02,223 INFO i.p.u.ServerChanel [MainFrameThread] Reply got from server 
+2023-06-07 16:11:02,226 INFO i.p.u.DeserializeObject [MainFrameThread] message deserialized 
+2023-06-07 16:12:37,697 DEBUG o.r.Reflections [main] going to scan these urls: [file:/D:/IntelliJ%20IDEA%202022.2.3/Lab7/Server/target/classes/, file:/D:/IntelliJ%20IDEA%202022.2.3/Lab7/Client/target/classes/, file:/D:/IntelliJ%20IDEA%202022.2.3/Lab7/Common/target/classes/] 
+2023-06-07 16:12:37,800 INFO o.r.Reflections [main] Reflections took 98 ms to scan 3 urls, producing 5 keys and 25 values  
+2023-06-07 16:12:37,845 INFO i.p.u.ShutDownThread [main] +1 thread executed after main 
+2023-06-07 16:12:44,588 INFO i.p.u.Executor [main] AuthorizationFrame:Button clicked 
+2023-06-07 16:12:44,597 INFO i.p.u.SerializeObject [main] serialize command log_in 
+2023-06-07 16:12:44,599 INFO i.p.u.ServerChanel [main] Message sent to server,waiting for reply 
+2023-06-07 16:13:21,903 DEBUG o.r.Reflections [main] going to scan these urls: [file:/D:/IntelliJ%20IDEA%202022.2.3/Lab7/Server/target/classes/, file:/D:/IntelliJ%20IDEA%202022.2.3/Lab7/Client/target/classes/, file:/D:/IntelliJ%20IDEA%202022.2.3/Lab7/Common/target/classes/] 
+2023-06-07 16:13:22,003 INFO o.r.Reflections [main] Reflections took 95 ms to scan 3 urls, producing 5 keys and 25 values  
+2023-06-07 16:13:22,055 INFO i.p.u.ShutDownThread [main] +1 thread executed after main 
+2023-06-07 16:13:42,678 INFO i.p.u.Executor [main] AuthorizationFrame:Button clicked 
+2023-06-07 16:13:42,686 INFO i.p.u.SerializeObject [main] serialize command log_in 
+2023-06-07 16:13:42,688 INFO i.p.u.ServerChanel [main] Message sent to server,waiting for reply 
+2023-06-07 16:13:42,795 INFO i.p.u.ServerChanel [main] Reply got from server 
+2023-06-07 16:13:42,814 INFO i.p.u.DeserializeObject [main] message deserialized 
+2023-06-07 16:13:42,814 INFO i.p.u.Executor [main] Authorized successfully 
+2023-06-07 16:13:42,829 INFO i.p.u.Executor [main] createMainFrameThread started 
+2023-06-07 16:13:42,843 INFO i.p.s.MainFrame [main] try to create MainFrame 
+2023-06-07 16:13:42,872 INFO i.p.s.AddButton [main] FlyWeightCommandFactory found add command 
+2023-06-07 16:13:42,876 INFO i.p.s.UpdateButton [main] FlyWeightCommandFactory found add command 
+2023-06-07 16:13:42,934 INFO i.p.s.MainFrame [main] create MainFrame successfully 
+2023-06-07 16:15:53,920 DEBUG o.r.Reflections [main] going to scan these urls: [file:/D:/IntelliJ%20IDEA%202022.2.3/Lab7/Server/target/classes/, file:/D:/IntelliJ%20IDEA%202022.2.3/Lab7/Client/target/classes/, file:/D:/IntelliJ%20IDEA%202022.2.3/Lab7/Common/target/classes/] 
+2023-06-07 16:15:54,018 INFO o.r.Reflections [main] Reflections took 92 ms to scan 3 urls, producing 5 keys and 25 values  
+2023-06-07 16:15:54,067 INFO i.p.u.ShutDownThread [main] +1 thread executed after main 
+2023-06-07 16:15:59,610 INFO i.p.u.Executor [main] AuthorizationFrame:Button clicked 
+2023-06-07 16:15:59,620 INFO i.p.u.SerializeObject [main] serialize command log_in 
+2023-06-07 16:15:59,622 INFO i.p.u.ServerChanel [main] Message sent to server,waiting for reply 
+2023-06-07 16:15:59,727 INFO i.p.u.ServerChanel [main] Reply got from server 
+2023-06-07 16:15:59,752 INFO i.p.u.DeserializeObject [main] message deserialized 
+2023-06-07 16:15:59,753 INFO i.p.u.Executor [main] Authorized successfully 
+2023-06-07 16:15:59,775 INFO i.p.u.Executor [main] createMainFrameThread started 
+2023-06-07 16:15:59,787 INFO i.p.s.MainFrame [main] try to create MainFrame 
+2023-06-07 16:15:59,825 INFO i.p.s.AddButton [main] FlyWeightCommandFactory found add command 
+2023-06-07 16:15:59,831 INFO i.p.s.UpdateButton [main] FlyWeightCommandFactory found add command 
+2023-06-07 16:15:59,909 INFO i.p.s.MainFrame [main] create MainFrame successfully 
+2023-06-07 16:16:25,756 DEBUG o.r.Reflections [main] going to scan these urls: [file:/D:/IntelliJ%20IDEA%202022.2.3/Lab7/Server/target/classes/, file:/D:/IntelliJ%20IDEA%202022.2.3/Lab7/Client/target/classes/, file:/D:/IntelliJ%20IDEA%202022.2.3/Lab7/Common/target/classes/] 
+2023-06-07 16:16:25,863 INFO o.r.Reflections [main] Reflections took 103 ms to scan 3 urls, producing 5 keys and 25 values  
+2023-06-07 16:16:25,909 INFO i.p.u.ShutDownThread [main] +1 thread executed after main 
+2023-06-07 16:16:29,954 INFO i.p.u.Executor [main] AuthorizationFrame:Button clicked 
+2023-06-07 16:16:29,963 INFO i.p.u.SerializeObject [main] serialize command log_in 
+2023-06-07 16:16:29,965 INFO i.p.u.ServerChanel [main] Message sent to server,waiting for reply 
+2023-06-07 16:16:30,076 INFO i.p.u.ServerChanel [main] Reply got from server 
+2023-06-07 16:16:30,100 INFO i.p.u.DeserializeObject [main] message deserialized 
+2023-06-07 16:16:30,100 INFO i.p.u.Executor [main] Authorized successfully 
+2023-06-07 16:16:30,116 INFO i.p.u.Executor [main] createMainFrameThread started 
+2023-06-07 16:16:30,133 INFO i.p.s.MainFrame [main] try to create MainFrame 
+2023-06-07 16:16:30,172 INFO i.p.s.AddButton [main] FlyWeightCommandFactory found add command 
+2023-06-07 16:16:30,176 INFO i.p.s.UpdateButton [main] FlyWeightCommandFactory found add command 
+2023-06-07 16:16:30,242 INFO i.p.s.MainFrame [main] create MainFrame successfully 
+2023-06-07 16:17:06,010 DEBUG o.r.Reflections [main] going to scan these urls: [file:/D:/IntelliJ%20IDEA%202022.2.3/Lab7/Server/target/classes/, file:/D:/IntelliJ%20IDEA%202022.2.3/Lab7/Client/target/classes/, file:/D:/IntelliJ%20IDEA%202022.2.3/Lab7/Common/target/classes/] 
+2023-06-07 16:17:06,106 INFO o.r.Reflections [main] Reflections took 91 ms to scan 3 urls, producing 5 keys and 25 values  
+2023-06-07 16:17:06,156 INFO i.p.u.ShutDownThread [main] +1 thread executed after main 
+2023-06-07 16:17:10,255 INFO i.p.u.Executor [main] AuthorizationFrame:Button clicked 
+2023-06-07 16:17:10,262 INFO i.p.u.SerializeObject [main] serialize command log_in 
+2023-06-07 16:17:10,263 INFO i.p.u.ServerChanel [main] Message sent to server,waiting for reply 
+2023-06-07 16:17:10,366 INFO i.p.u.ServerChanel [main] Reply got from server 
+2023-06-07 16:17:10,389 INFO i.p.u.DeserializeObject [main] message deserialized 
+2023-06-07 16:17:10,390 INFO i.p.u.Executor [main] Authorized successfully 
+2023-06-07 16:17:10,408 INFO i.p.u.Executor [main] createMainFrameThread started 
+2023-06-07 16:17:10,423 INFO i.p.s.MainFrame [main] try to create MainFrame 
+2023-06-07 16:17:10,462 INFO i.p.s.AddButton [main] FlyWeightCommandFactory found add command 
+2023-06-07 16:17:10,465 INFO i.p.s.UpdateButton [main] FlyWeightCommandFactory found add command 
+2023-06-07 16:17:10,531 INFO i.p.s.MainFrame [main] create MainFrame successfully 
+2023-06-07 16:19:37,126 DEBUG o.r.Reflections [main] going to scan these urls: [file:/D:/IntelliJ%20IDEA%202022.2.3/Lab7/Server/target/classes/, file:/D:/IntelliJ%20IDEA%202022.2.3/Lab7/Client/target/classes/, file:/D:/IntelliJ%20IDEA%202022.2.3/Lab7/Common/target/classes/] 
+2023-06-07 16:19:37,230 INFO o.r.Reflections [main] Reflections took 99 ms to scan 3 urls, producing 5 keys and 25 values  
+2023-06-07 16:19:37,280 INFO i.p.u.ShutDownThread [main] +1 thread executed after main 
+2023-06-07 16:19:41,342 INFO i.p.u.Executor [main] AuthorizationFrame:Button clicked 
+2023-06-07 16:19:41,349 INFO i.p.u.SerializeObject [main] serialize command log_in 
+2023-06-07 16:19:41,350 INFO i.p.u.ServerChanel [main] Message sent to server,waiting for reply 
+2023-06-07 16:19:41,465 INFO i.p.u.ServerChanel [main] Reply got from server 
+2023-06-07 16:19:41,484 INFO i.p.u.DeserializeObject [main] message deserialized 
+2023-06-07 16:19:41,484 INFO i.p.u.Executor [main] Authorized successfully 
+2023-06-07 16:19:41,497 INFO i.p.u.Executor [main] createMainFrameThread started 
+2023-06-07 16:19:41,522 INFO i.p.s.MainFrame [main] try to create MainFrame 
+2023-06-07 16:19:41,547 INFO i.p.s.AddButton [main] FlyWeightCommandFactory found add command 
+2023-06-07 16:19:41,552 INFO i.p.s.UpdateButton [main] FlyWeightCommandFactory found add command 
+2023-06-07 16:19:41,604 INFO i.p.s.MainFrame [main] create MainFrame successfully 
+2023-06-07 16:19:50,122 INFO i.p.s.MainFrame [AWT-EventQueue-0] try to create MainFrame 
+2023-06-07 16:19:50,126 INFO i.p.s.AddButton [AWT-EventQueue-0] FlyWeightCommandFactory found add command 
+2023-06-07 16:19:50,127 INFO i.p.s.UpdateButton [AWT-EventQueue-0] FlyWeightCommandFactory found add command 
+2023-06-07 16:19:50,172 INFO i.p.s.MainFrame [AWT-EventQueue-0] create MainFrame successfully 
+2023-06-07 16:23:27,944 DEBUG o.r.Reflections [main] going to scan these urls: [file:/D:/IntelliJ%20IDEA%202022.2.3/Lab7/Server/target/classes/, file:/D:/IntelliJ%20IDEA%202022.2.3/Lab7/Client/target/classes/, file:/D:/IntelliJ%20IDEA%202022.2.3/Lab7/Common/target/classes/] 
+2023-06-07 16:23:28,043 INFO o.r.Reflections [main] Reflections took 95 ms to scan 3 urls, producing 5 keys and 25 values  
+2023-06-07 16:23:28,086 INFO i.p.u.ShutDownThread [main] +1 thread executed after main 
+2023-06-07 16:23:33,527 INFO i.p.u.Executor [main] AuthorizationFrame:Button clicked 
+2023-06-07 16:23:33,539 INFO i.p.u.SerializeObject [main] serialize command log_in 
+2023-06-07 16:23:33,541 INFO i.p.u.ServerChanel [main] Message sent to server,waiting for reply 
+2023-06-07 16:23:33,643 INFO i.p.u.ServerChanel [main] Reply got from server 
+2023-06-07 16:23:33,666 INFO i.p.u.DeserializeObject [main] message deserialized 
+2023-06-07 16:23:33,667 INFO i.p.u.Executor [main] Authorized successfully 
+2023-06-07 16:23:33,683 INFO i.p.u.Executor [main] createMainFrameThread started 
+2023-06-07 16:23:33,716 INFO i.p.s.MainFrame [main] try to create MainFrame 
+2023-06-07 16:23:33,747 INFO i.p.s.AddButton [main] FlyWeightCommandFactory found add command 
+2023-06-07 16:23:33,750 INFO i.p.s.UpdateButton [main] FlyWeightCommandFactory found add command 
+2023-06-07 16:23:33,822 INFO i.p.s.MainFrame [main] create MainFrame successfully 
+2023-06-07 16:24:05,919 INFO i.p.u.Executor [MainFrameThread] Main frame:Button clicked:info 
+2023-06-07 16:24:05,920 INFO i.p.u.Executor [MainFrameThread] Main frame:Try to serialize command 
+2023-06-07 16:24:05,922 INFO i.p.u.SerializeObject [MainFrameThread] serialize command info 
+2023-06-07 16:24:05,923 INFO i.p.u.ServerChanel [MainFrameThread] Message sent to server,waiting for reply 
+2023-06-07 16:24:06,038 INFO i.p.u.ServerChanel [MainFrameThread] Reply got from server 
+2023-06-07 16:24:06,040 INFO i.p.u.DeserializeObject [MainFrameThread] message deserialized 
+2023-06-07 16:24:06,040 INFO i.p.s.InfoButton [MainFrameThread] buttonAction try to perform 
+2023-06-07 16:24:15,354 INFO i.p.s.AddFrame [AWT-EventQueue-0] buttonAction try to perform 
+2023-06-07 16:24:15,425 INFO i.p.u.Executor [MainFrameThread] Main frame:Button clicked:update 
+2023-06-07 16:24:16,278 INFO i.p.s.AddFrame [AWT-EventQueue-0] Try to create person 
+2023-06-07 16:24:16,281 DEBUG o.r.Reflections [AWT-EventQueue-0] going to scan these urls: [file:/D:/IntelliJ%20IDEA%202022.2.3/Lab7/Server/target/classes/, file:/D:/IntelliJ%20IDEA%202022.2.3/Lab7/Client/target/classes/, file:/D:/IntelliJ%20IDEA%202022.2.3/Lab7/Common/target/classes/] 
+2023-06-07 16:24:16,327 INFO o.r.Reflections [AWT-EventQueue-0] Reflections took 45 ms to scan 3 urls, producing 1 keys and 13 values  
+2023-06-07 16:24:16,331 ERROR i.p.u.CheckData [AWT-EventQueue-0] error during name setting:line has wrong format  
+2023-06-07 16:24:16,331 ERROR i.p.s.AddFrame [AWT-EventQueue-0] Can't create person 
+2023-06-07 16:24:16,347 INFO i.p.u.Executor [MainFrameThread] UPDATE BUTTON IS FALSE 
+2023-06-07 16:24:17,797 INFO i.p.u.Executor [MainFrameThread] Main frame:Button clicked:info 
+2023-06-07 16:24:17,798 INFO i.p.u.Executor [MainFrameThread] Main frame:Try to serialize command 
+2023-06-07 16:24:17,798 INFO i.p.u.SerializeObject [MainFrameThread] serialize command info 
+2023-06-07 16:24:17,799 INFO i.p.u.ServerChanel [MainFrameThread] Message sent to server,waiting for reply 
+2023-06-07 16:24:17,910 INFO i.p.u.ServerChanel [MainFrameThread] Reply got from server 
+2023-06-07 16:24:17,913 INFO i.p.u.DeserializeObject [MainFrameThread] message deserialized 
+2023-06-07 16:24:17,913 INFO i.p.s.InfoButton [MainFrameThread] buttonAction try to perform 
+2023-06-07 16:24:19,742 INFO i.p.s.AddFrame [AWT-EventQueue-0] buttonAction try to perform 
+2023-06-07 16:24:19,759 INFO i.p.u.Executor [MainFrameThread] Main frame:Button clicked:add 
+2023-06-07 16:24:20,836 INFO i.p.s.AddFrame [AWT-EventQueue-0] Try to create person 
+2023-06-07 16:24:20,836 DEBUG o.r.Reflections [AWT-EventQueue-0] going to scan these urls: [file:/D:/IntelliJ%20IDEA%202022.2.3/Lab7/Server/target/classes/, file:/D:/IntelliJ%20IDEA%202022.2.3/Lab7/Client/target/classes/, file:/D:/IntelliJ%20IDEA%202022.2.3/Lab7/Common/target/classes/] 
+2023-06-07 16:24:20,858 INFO o.r.Reflections [AWT-EventQueue-0] Reflections took 22 ms to scan 3 urls, producing 1 keys and 13 values  
+2023-06-07 16:24:20,859 ERROR i.p.u.CheckData [AWT-EventQueue-0] error during name setting:line has wrong format  
+2023-06-07 16:24:20,859 ERROR i.p.s.AddFrame [AWT-EventQueue-0] Can't create person 

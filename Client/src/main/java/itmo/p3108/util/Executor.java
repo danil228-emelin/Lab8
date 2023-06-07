@@ -73,7 +73,7 @@ public class Executor {
     private void createMainFrameThread(List<Person> list, String user) {
         log.info("createMainFrameThread started");
         MainFrame mainFrame = new MainFrame();
-        mainFrame.createMainFrame(list, user);
+        mainFrame.createMainFrame();
         Runnable runnable = () -> {
             while (true) {
                 while (MainFrame.button == null) {

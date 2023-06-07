@@ -11,15 +11,22 @@ public class UsersStorage {
     public static void add(String token, Users users) {
         map.put(token, users);
     }
+
     public static boolean isExist(String token) {
         return map.containsKey(token);
     }
+
     public static Optional<Users> get(String key) {
+        if (key == null) {
+            return Optional.empty();
+        }
         return Optional.ofNullable(map.get(key));
     }
+
     public static int length() {
         return map.size();
     }
+
     public static Set<Map.Entry<String, Users>> elements() {
         return map.entrySet();
     }

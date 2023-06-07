@@ -72,8 +72,7 @@ public class CheckData {
     @Checking
     public boolean checkPersonBirthday(String test) {
         if (!test.matches(BIRTHDAY_FORMAT)) {
-            log.error("error:during birthday setting line has wrong format");
-            System.err.println("error:during birthday setting line has wrong format");
+            log.error("error:during birthday setting line has wrong format "+test);
             return false;
         }
         String[] strings = test.split("-");

@@ -1,6 +1,7 @@
 package itmo.p3108.util;
 
 import itmo.p3108.model.Person;
+import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 
 import java.time.LocalDate;
@@ -21,6 +22,7 @@ public final class CollectionController {
     private static CollectionController controller = new CollectionController();
     private final LocalDate localDate;
     private final ReentrantReadWriteLock lock = new ReentrantReadWriteLock(true);
+  @Getter
     private volatile ArrayList<Person> personList;
 
     public CollectionController() {
@@ -49,8 +51,8 @@ public final class CollectionController {
 
     public String info() {
         lock.readLock().lock();
-        String result = "Тип:ArrayList\n" + "Дата инициализации:" +
-                localDate + "\n"
+        String result = "Тип:ArrayList\n," + "Дата инициализации:" +
+                localDate + "\n,"
                 + "Количество элементов:" + personList.size();
         lock.readLock().unlock();
         return result;

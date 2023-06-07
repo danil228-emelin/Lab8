@@ -33,7 +33,7 @@ public class PersonDAOImpl implements DAO<Person> {
                 "    location             int references location\n" +
                 ");\n" +
                 "\n";
-        try(Statement statement = connection.createStatement();) {
+        try(Statement statement = connection.createStatement()) {
             statement.executeQuery(createTablePerson);
         } catch (SQLException e) {
             log.error("createTable:" + e.getMessage());

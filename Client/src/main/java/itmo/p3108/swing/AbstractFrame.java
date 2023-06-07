@@ -4,19 +4,29 @@ import javax.swing.*;
 import java.awt.*;
 
 abstract public class AbstractFrame {
+    public static final Dimension DIMENSION = Toolkit.getDefaultToolkit().getScreenSize();
+    protected JPanel jPanel;
+    protected JFrame jFrame;
 
-    protected static JFrame logFrame() {
-        JFrame jFrame = new JFrame() {
+    public void createFrame() {
+        if (jFrame != null) {
+            jFrame.dispose();
+        }
+
+        jFrame = new JFrame() {
         };
         jFrame.setVisible(false);
         jFrame.setResizable(false);
         jFrame.setLocationRelativeTo(null);
-        jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        Toolkit toolkit = Toolkit.getDefaultToolkit();
-        Dimension dimension = toolkit.getScreenSize();
-        jFrame.setBounds(dimension.width / 2 - 450, dimension.height / 2 - 200, 800, 500);
-        return jFrame;
     }
 
 
+
+    public void createPanel() {
+        jPanel = new JPanel();
+        jPanel.setLayout(null);
+    }
+    public void close(){
+        jFrame.dispose();
+    }
 }

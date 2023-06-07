@@ -1,20 +1,19 @@
 package itmo.p3108.util;
 
-import itmo.p3108.command.Exit;
+import itmo.p3108.command.*;
 import itmo.p3108.command.type.Command;
 import itmo.p3108.command.type.OneArgument;
 import itmo.p3108.exception.AuthorizeException;
-import itmo.p3108.swing.AuthorizationFrame;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import itmo.p3108.exception.ValidationException;
+import itmo.p3108.model.Person;
+import itmo.p3108.swing.AddFrame;
+import itmo.p3108.swing.AuthFrame;
+import itmo.p3108.swing.MainFrame;
 import lombok.extern.slf4j.Slf4j;
 
-import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.util.Arrays;
+import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.function.Consumer;
 
 /**
  * Executor process request from client.
@@ -25,23 +24,8 @@ import java.util.function.Consumer;
 public class Executor {
     private static final ServerChanel serverChanel = new ServerChanel(4445);
     private static final Invoker invoker = Invoker.getInstance();
+    private Thread mainFrameThread;
 
-    private static void serializeAndSend(Optional<Command> command, Consumer<Boolean> consumer) {
-
-        command.ifPresentOrElse(
-                command1 -> {
-                    boolean serializedObject = SerializeObject.serialize(command1, serverChanel.getClientPort());
-                    consumer.accept(serializedObject);
-                }, () -> {
-                    Optional<String> reply = serverChanel.sendAndReceive();
-                    if (reply.isPresent()) {
-                        System.out.println(reply.get());
-                    } else {
-                        log.error("Doesn't have reply");
-                    }
-                });
-
-    }
 
     public void processRequest() {
         ShutDownThread.createAndAdd(serverChanel::close);
@@ -49,70 +33,139 @@ public class Executor {
             authorize();
         } catch (AuthorizeException exception) {
             log.error(exception.getMessage());
-            new Exit().prepare();
+            System.exit(-1);
         }
-        while (true) {
 
-            Optional<Command> command = invoker.invoke(UserReader.read());
-            serializeAndSend(command,
-                    result -> {
-                        if (result) {
-                            Optional<String> reply = serverChanel.sendAndReceive();
-                            if (reply.isPresent()) {
-                                System.out.println(reply.get());
-                            } else {
-                                log.error("Doesn't have reply");
-                            }
-                        } else {
-                            log.error("Can't send serialized message,it is empty");
-                        }
-                    }
-            );
-        }
     }
 
     private void authorize() {
-        ButtonActionListener buttonActionListener = new ButtonActionListener();
-        AuthorizationFrame authorizationFrame = new AuthorizationFrame();
-        JFrame frame = authorizationFrame.createFrame(buttonActionListener);
+        AuthFrame authorizationFrame = new AuthFrame();
+        authorizationFrame.createFrame();
         Users users = Users.getUser();
-        while (users.getLogin() == null || users.getPassword() == null) {
+        while (!AuthFrame.ButtonActionListener.wasClicked) {
+        }
+        log.info("AuthorizationFrame:Button clicked");
+        AtomicReference<String> reply = new AtomicReference<>();
 
+        boolean serializeResult = SerializeObject.serialize(AuthFrame.ButtonActionListener.commandOptional.get(), serverChanel.getClientPort());
+
+        if (!serializeResult) {
+            throw new AuthorizeException("Can't send Message to server");
+        }
+        reply.set(serverChanel.sendAndReceive());
+        if (reply.get().isEmpty()) {
+            throw new AuthorizeException("Connection with server lost,can't authorize now");
+        }
+        if (reply.get().contains("error")) {
+            throw new AuthorizeException(reply.get());
+        }
+        log.info("Authorized successfully");
+
+        authorizationFrame.close();
+        Users.getUser().setToken(reply.get());
+        ServerChanel.replyFromServer = null;
+        createMainFrameThread(ServerChanel.list, Users.getUser().getLogin());
+        if (users.getLogin() == null || users.getPassword() == null) {
+            throw new ValidationException("user didn't get password and login");
         }
     }
 
-    @Setter
-    @NoArgsConstructor
-    public static class ButtonActionListener extends AbstractAction {
-        private JTextField fieldLogin;
-        private JPasswordField passwordField;
-        private OneArgument<?> command;
+    private void createMainFrameThread(List<Person> list, String user) {
+        log.info("createMainFrameThread started");
+        MainFrame mainFrame = new MainFrame();
+        mainFrame.createMainFrame(list, user);
+        Runnable runnable = () -> {
+            while (true) {
+                while (MainFrame.button == null) {
+                }
+                log.info("Main frame:Button clicked:" + MainFrame.button.getCommand().name());
+                if (MainFrame.button.getCommand() instanceof Add) {
+                    Optional<Command> command = FlyWeightCommandFactory.getInstance().getCommand("add");
+                    if (command.isEmpty()) {
+                        throw new ValidationException("can't find add in FlyWeightCommandFactory ");
+                    }
+                    Add command1 = (Add) command.get();
+                    while (command1.getParameter() == null) {
+                        if (AddFrame.wasClicked && !AddFrame.wasAdded) {
+                            break;
+                        }
+                    }
+                    if (AddFrame.wasClicked && !AddFrame.wasAdded) {
+                        AddFrame.wasClicked = false;
+                        AddFrame.wasAdded = false;
+                        MainFrame.button = null;
+                        continue;
+                    }
+                }
+                if (MainFrame.button.getCommand() instanceof AddIfMax) {
+                    Optional<Command> command = FlyWeightCommandFactory.getInstance().getCommand("add_if_max");
+                    if (command.isEmpty()) {
+                        throw new ValidationException("can't find add in FlyWeightCommandFactory ");
+                    }
+                    AddIfMax command1 = (AddIfMax) command.get();
+                    while (command1.getParameter() == null) {
+                        if (AddFrame.wasClicked && !AddFrame.wasAdded) {
+                            log.info("ADD BUTTON IS FALSE");
+                            break;
+                        }
+                    }
+                    if (AddFrame.wasClicked && !AddFrame.wasAdded) {
+                        AddFrame.wasClicked = false;
+                        AddFrame.wasAdded = false;
+                        MainFrame.button = null;
+                        continue;
+                    }
+                }
+                if (MainFrame.button.getCommand() instanceof Update) {
+                    Optional<Command> command = FlyWeightCommandFactory.getInstance().getCommand("update");
+                    if (command.isEmpty()) {
+                        throw new ValidationException("can't find add in FlyWeightCommandFactory ");
+                    }
+                    Update command1 = (Update) command.get();
+                    while (command1.getParameter() == null) {
+                        if (AddFrame.wasClicked && !AddFrame.wasAdded) {
+                            log.info("UPDATE BUTTON IS FALSE");
+                            break;
+                        }
+                    }
+                    if (AddFrame.wasClicked && !AddFrame.wasAdded) {
+                        AddFrame.wasClicked = false;
+                        AddFrame.wasAdded = false;
+                        MainFrame.button = null;
+                        continue;
+                    }
+                }
 
-        public ButtonActionListener(ButtonActionListener listener) {
-            this.fieldLogin = listener.fieldLogin;
-            this.passwordField = listener.passwordField;
-        }
-
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            String login = fieldLogin.getText();
-            String password = Arrays.toString(passwordField.getPassword());
-           Optional<Command> commandOptional = command.prepare(login + "~" + password);
-            AtomicReference<Optional<String>> reply = new AtomicReference<>(Optional.empty());
-           serializeAndSend(commandOptional, result -> {
-                if (!result) {
+                AtomicReference<Optional<String>> reply = new AtomicReference<>();
+                log.info("Main frame:Try to serialize command");
+                boolean serializationResult = SerializeObject.serialize(MainFrame.button.getCommand(), 0);
+                if (!serializationResult) {
                     throw new AuthorizeException("Can't send Message to server");
                 }
-                reply.set(serverChanel.sendAndReceive());
+                reply.set(Optional.ofNullable(serverChanel.sendAndReceive()));
                 if (reply.get().isEmpty()) {
                     throw new AuthorizeException("Connection with server lost,can't authorize now");
                 }
-                if (reply.get().get().contains("error")) {
-                    throw new AuthorizeException(reply.get().get());
+
+                if (!(MainFrame.button.getCommand() instanceof Info)) {
+                    MainFrame.clear();
+                    if ((AddFrame.wasClicked && AddFrame.wasAdded)) {
+                        MainFrame.addElements();
+                        AddFrame.wasClicked = false;
+                        AddFrame.wasAdded = false;
+                        ((OneArgument) MainFrame.button.getCommand()).setParameter(null);
+                    }
                 }
-                log.info("Authorized successfully");
-                Users.getUser().setToken(reply.get().get());
-            });
-        }
+                if (MainFrame.button.getCommand() instanceof Clear) {
+                    MainFrame.addElements();
+                }
+                if (MainFrame.button.getCommand() instanceof Info) {
+                    MainFrame.button.buttonAction();
+                }
+                MainFrame.button = null;
+            }
+        };
+        mainFrameThread = new Thread(runnable, "MainFrameThread");
+        mainFrameThread.start();
     }
 }

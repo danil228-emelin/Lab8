@@ -27,7 +27,7 @@ public class Add implements OneArgument<Person> {
     @Serial
     private static final long serialVersionUID = 589988001L;
     @Setter
-    private Person person;
+    private volatile Person person;
 
 
     @Override

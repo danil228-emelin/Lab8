@@ -102,7 +102,7 @@ public class UsersDAOImpl implements DAO<String> {
             searchStatement.setString(1, token);
             ResultSet result = searchStatement.executeQuery();
             if (result.next()) {
-                log.info("find owner in db");
+                log.info("find user in db");
                 return Optional.of(result.getInt("user_id"));
             }
         } catch (SQLException e) {

@@ -1,20 +1,22 @@
 package itmo.p3108.util;
 
 import lombok.Data;
+import lombok.extern.slf4j.Slf4j;
 
 import java.io.Serial;
 import java.io.Serializable;
 import java.util.Objects;
 
 @Data
+@Slf4j
 public class Users implements Serializable {
 
     @Serial
     private static final long serialVersionUID = 493737051L;
 
     private static final Users USER = new Users();
-  volatile   private String login;
-  volatile   private String password;
+    volatile private String login;
+    volatile private String password;
     private String token;
     private Boolean isSaved = false;
     private Integer UserId;
@@ -24,6 +26,10 @@ public class Users implements Serializable {
 
     public static Users getUser() {
         return USER;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
     }
 
     @Override

@@ -70,4 +70,24 @@ public class SerializeObject {
     public static void clear() {
         messages.clear();
     }
+
+    public static Optional<byte[]> serialize(String result) {
+        try (ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream()) {
+
+            MessageServer messageServer = new MessageServer();
+            messageServer.setMessage(result);
+            messageServer.setList(CollectionController.getInstance().getPersonList());
+
+            boolean creatingMessage = createMessage(messageServer, byteArrayOutputStream);
+           log.info("serialize  reply");
+            return Optional.ofNullable(messages.poll());
+
+        } catch (IOException e) {
+            log.info("ERROR during serialize  reply");
+            log.error(e.getMessage());
+
+        }
+       return Optional.empty();
+    }
+
 }

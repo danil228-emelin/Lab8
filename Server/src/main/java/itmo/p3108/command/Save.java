@@ -26,7 +26,7 @@ import java.util.concurrent.*;
 public class Save implements NoArgument<String> {
 
     @Override
-    public String execute(String string) {
+    public String execute(String string)  {
         ForkJoinPool forkJoinPool = new ForkJoinPool();
 
         try {
@@ -57,7 +57,7 @@ public class Save implements NoArgument<String> {
             return "";
         } catch (InterruptedException | ExecutionException e) {
             log.error("Can't load elements in database");
-            log.error(e.toString());
+            log.error(e.getMessage());
         } finally {
             forkJoinPool.shutdown();
         }

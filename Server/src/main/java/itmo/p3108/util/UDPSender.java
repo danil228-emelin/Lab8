@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.nio.ByteBuffer;
 import java.nio.channels.DatagramChannel;
+import java.util.Optional;
 
 @Slf4j
 /**
@@ -29,8 +30,14 @@ public class UDPSender {
 
     public void send(String message, int clientPort) {
         try {
+            Optional<byte[]> m = SerializeObject.serialize(message);
+            if (m.isEmpty()) {
+                log.error("can't send answer to client");
+                return;
+            }
             buffer.clear();
-            buffer.put(message.getBytes());
+
+            buffer.put(m.get());
             buffer.flip();
             InetSocketAddress serverAddress = FlyweightClientSocket.getClientSocket(clientPort);
             channel.send(buffer, serverAddress);

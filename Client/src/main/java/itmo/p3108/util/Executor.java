@@ -64,13 +64,13 @@ public class Executor {
         authorizationFrame.close();
         Users.getUser().setToken(reply.get());
         ServerChanel.replyFromServer = null;
-        createMainFrameThread(ServerChanel.list, Users.getUser().getLogin());
+        createMainFrameThread();
         if (users.getLogin() == null || users.getPassword() == null) {
             throw new ValidationException("user didn't get password and login");
         }
     }
 
-    private void createMainFrameThread(List<Person> list, String user) {
+    private void createMainFrameThread() {
         log.info("createMainFrameThread started");
         MainFrame mainFrame = new MainFrame();
         mainFrame.createMainFrame();

@@ -5,6 +5,7 @@ import java.awt.*;
 
 abstract public class AbstractFrame {
     public static final Dimension DIMENSION = Toolkit.getDefaultToolkit().getScreenSize();
+    public static final  Toolkit TOOLKIT=Toolkit.getDefaultToolkit();
     protected JPanel jPanel;
     protected JFrame jFrame;
 

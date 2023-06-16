@@ -30,7 +30,6 @@ public class MainFrame extends AbstractFrame {
     }
 
 
-
     public static void clear() {
         if (MainFrame.model.getRowCount() > 0) {
             for (int i = MainFrame.model.getRowCount() - 1; i > -1; i--) {
@@ -119,7 +118,7 @@ public class MainFrame extends AbstractFrame {
         nextButton.addActionListener(l -> {
             jFrame.setVisible(false);
             MapFrame mapFrame = new MapFrame();
-            mapFrame.createMapFrame(ServerChanel.list,jFrame);
+            mapFrame.createMapFrame(ServerChanel.list, jFrame);
         });
         next.makeInvisible();
         JButton button1 = next.getButton();
@@ -147,9 +146,11 @@ public class MainFrame extends AbstractFrame {
         model.addColumn("locationY");
         model.addColumn("locationZ");
         model.addColumn("locationName");
+        model.addColumn("Respound");
+        model.addColumn("TargetPlace");
         table.setForeground(Color.RED);
         for (Person p : ServerChanel.list) {
-            model.addRow(new Object[]{p.getPersonId(), p.getPersonName(), p.getPersonHeight(), LocalDateAdapter.getInstance().marshal(p.getPersonBirthday()), p.getPersonEyeColor().getName().substring(2), p.getPersonNationality().getName().substring(2), p.getCoordinates().getCoordinatesX(), p.getCoordinates().getCoordinatesY(), p.getLocation().getLocationX(), p.getLocation().getLocationY(), p.getLocation().getLocationZ(), p.getLocation().getLocationName()});
+            model.addRow(new Object[]{p.getPersonId(), p.getPersonName(), p.getPersonHeight(), LocalDateAdapter.getInstance().marshal(p.getPersonBirthday()), p.getPersonEyeColor().getName().substring(2), p.getPersonNationality().getName().substring(2), p.getCoordinates().getCoordinatesX(), p.getCoordinates().getCoordinatesY(), p.getLocation().getLocationX(), p.getLocation().getLocationY(), p.getLocation().getLocationZ(), p.getLocation().getLocationName(), p.getResp().name(), p.getTargetPlace().name()});
         }
         buttonCreators.add(buttonCreator1);
         buttonCreators.add(buttonCreator2);

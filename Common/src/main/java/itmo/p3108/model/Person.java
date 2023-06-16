@@ -43,7 +43,8 @@ public class Person implements Serializable {
 
     private Country personNationality;
     private Location location;
-
+    private Place resp;
+    private Place targetPlace;
     private String token;
 
     @Override

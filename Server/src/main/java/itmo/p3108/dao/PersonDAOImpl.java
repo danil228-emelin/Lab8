@@ -44,8 +44,8 @@ public class PersonDAOImpl implements DAO<Person> {
     public Optional<Integer> insert(Person element, Connection connection) {
 
         String savePerson = "insert into person (person_id, person_name, coordinates, person_creation_date, person_height, person_birthday,\n" +
-                "                    person_eye_color, person_nationality, location,user_id)\n" +
-                "values (?, ?, ?, ?, ?, ?, ?, ?, ?,?);";
+                "                    person_eye_color, person_nationality, location,user_id,initial_place,target_place)\n" +
+                "values (?, ?, ?, ?, ?, ?, ?, ?, ?,?,?,?);";
         try {
             connection.setAutoCommit(false);
             Optional<Integer> locationId = locationDAO.insert(element.getLocation(), connection);
@@ -63,6 +63,8 @@ public class PersonDAOImpl implements DAO<Person> {
             persona.setInt(8, Country.countyNumber(element.getPersonNationality()).get());
             persona.setInt(9, locationId.get());
             persona.setInt(10, user_id.get());
+            persona.setString(11,element.getResp().name());
+            persona.setString(12,element.getTargetPlace().getPlaceName());
             persona.execute();
             log.info(String.format("person with id %d saved", element.getPersonId()));
             connection.commit();
@@ -109,6 +111,8 @@ public class PersonDAOImpl implements DAO<Person> {
                                 .unmarshal(result.getString("person_birthday")))
                         .personEyeColor(Color.newValue(Integer.toString(result.getInt("person_eye_color"))).get())
                         .personNationality(Country.newValue(Integer.toString(result.getInt("person_nationality"))).get())
+                        .resp(Place.getPlaceByName(result.getString("initial_place")))
+                        .targetPlace(Place.getPlaceByName(result.getString("target_place")))
                         .location(Location.builder()
                                 .locationX(result.getDouble("location_x"))
                                 .locationY(result.getFloat("location_y"))

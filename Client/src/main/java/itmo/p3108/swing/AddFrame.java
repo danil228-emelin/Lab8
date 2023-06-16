@@ -6,10 +6,7 @@ import itmo.p3108.command.Add;
 import itmo.p3108.command.AddIfMax;
 import itmo.p3108.command.Update;
 import itmo.p3108.command.type.Command;
-import itmo.p3108.model.Coordinates;
-import itmo.p3108.model.Country;
-import itmo.p3108.model.Location;
-import itmo.p3108.model.Person;
+import itmo.p3108.model.*;
 import itmo.p3108.util.CheckData;
 import itmo.p3108.util.Checking;
 import itmo.p3108.util.Users;
@@ -20,7 +17,7 @@ import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 
 import javax.swing.*;
-import java.awt.*;
+import java.awt.Color;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.time.ZonedDateTime;
@@ -101,6 +98,34 @@ public class AddFrame {
 
             JTextField coordinatesY = labText.create("Coordinates.y", 0, 390, 90, 30, "Use fractional number");
 
+            JComboBox<Place> resp = new JComboBox<>();
+            JLabel respLabel = new JLabel("choose initial place");
+
+            resp.addItem(Place.EVEREST);
+            resp.addItem(Place.FOREST);
+            resp.addItem(Place.ROCK);
+            resp.addItem(Place.KINGDOM);
+            resp.addItem(Place.VILLAGE);
+
+            respLabel.setBounds(0, 425, 120, 30);
+            resp.setBounds(125, 425, 90, 30);
+
+            JComboBox<Place> targetPlace = new JComboBox<>();
+            JLabel targetLabel = new JLabel("choose target place");
+
+            targetLabel.setBounds(220, 425, 120, 30);
+            targetPlace.setBounds(345, 425, 90, 30);
+
+            targetPlace.addItem(Place.EVEREST);
+            targetPlace.addItem(Place.FOREST);
+            targetPlace.addItem(Place.ROCK);
+            targetPlace.addItem(Place.KINGDOM);
+            targetPlace.addItem(Place.VILLAGE);
+
+            jPanel.add(targetLabel);
+            jPanel.add(targetPlace);
+            jPanel.add(respLabel);
+            jPanel.add(resp);
             JButton ok = new JButton("CREATE");
             CheckData checkData = new CheckData();
             jFrame.revalidate();
@@ -122,6 +147,8 @@ public class AddFrame {
                             .coordinates(Coordinates.builder().coordinatesX(Integer.parseInt(coordinatesX.getText())).coordinatesY(Float.parseFloat(coordinatesY.getText())).build())
                             .personCreationDate(ZonedDateTime.now())
                             .token(Users.getUser().getToken())
+                            .targetPlace((Place) targetPlace.getSelectedItem())
+                            .resp((Place) resp.getSelectedItem())
                             .build();
                     if (command instanceof Update) {
                         person.setPersonId(Long.valueOf(UpdateButton.idText.getText()));
@@ -142,7 +169,7 @@ public class AddFrame {
                 jFrame.dispose();
                 wasClicked = true;
             });
-            ok.setBounds(180, 440, 100, 30);
+            ok.setBounds(180, 480, 100, 30);
             jFrame.addWindowListener(new WindowAdapter() {
                 @Override
                 public void windowClosing(WindowEvent e) {
